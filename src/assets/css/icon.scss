@@ -1,0 +1,80 @@
+.icon {
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include size(70px);
+  &-xs {
+    @include size(30px);
+  }
+  &-sm {
+    @include size(50px);
+  }
+  &-logo { // ai機器人
+    background-image: url("~@/assets/images/Icon simple-probot.svg");
+    &-blue {
+      background-image: url("~@/assets/images/probot.svg");
+    }
+  }
+  // main function
+  &-bulb { // 投資小學堂
+    background-image: url("~@/assets/images/Icon awesome-lightbulb.svg");
+    &-blue {
+      background-image: url("~@/assets/images/bulb-blue.svg");
+    }
+  }
+  &-chat { // 新聞交流平台
+    background-image: url("~@/assets/images/Icon material-chat.svg");
+    &-green {
+      background-image: url("~@/assets/images/chat-green.svg");
+    }
+  }
+  &-chart { // 績效試算
+    background-image: url("~@/assets/images/Icon awesome-chart-line.svg");
+    &-green {
+      background-image: url("~@/assets/images/chart-green.svg");
+    }
+    &-dark-green {
+      background-image: url("~@/assets/images/chart-line-green.svg");
+    }
+  }
+  &-invest { // 開始投資
+    background-image: url("~@/assets/images/Icon awesome-balance-scale.svg");
+    &-blue {
+      background-image: url("~@/assets/images/balance-blue.svg");
+    }
+  }
+  // 使用者相關
+  &-user { //使用者
+    background-image: url("~@/assets/images/Icon awesome-robot.svg");
+  }
+  &-bell { // 即時通知
+    background-image: url("~@/assets/images/Icon awesome-bell.svg");
+    &-yellow {
+      background-image: url("~@/assets/images/bell.svg");
+    }
+  }
+  &-battery { // 虛擬貨幣
+    background-image: url("~@/assets/images/Icon material-battery-charging-full.svg");
+    &-blue {
+      background-image: url("~@/assets/images/battery.svg");
+    }
+  }
+  // Index-IntroDetail
+  &-cash {
+    background-image: url("~@/assets/images/cash.svg");
+  }
+  &-timeline {
+    background-image: url("~@/assets/images/timeline.svg");
+  }
+  &-book {
+    background-image: url("~@/assets/images/book.svg");
+  }
+  // link
+  &-line {
+    background-image: url("~@/assets/images/line.png");
+  }
+  &-mail {
+    background-image: url("~@/assets/images/mail.png");
+  }
+}

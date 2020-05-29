@@ -1,0 +1,59 @@
+html {
+  font-family: 微軟正黑體 !important;
+  color: $dark-blue;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+.hr-text {
+  border: 0;
+  border-top: 1px solid #eee;
+  line-height: 0px;
+  &:before {
+    content: attr(data-content);
+    background: $white;
+    padding: 10px;
+  }
+}
+
+.tab {
+  color: $gray;
+  font-size: 20px;
+  cursor: pointer;
+  // transition: color .5s ease-in-out;
+  &:hover {
+    color: $green;
+  }
+  &.active {
+    color: $white;
+    font-weight: bold;
+    background: $green;
+  }
+}
+
+.btn {
+  color: $dark-green;
+  border: 1px solid $dark-green;
+  &:hover {
+    color: $white;
+    background: $dark-green;
+  }
+}
+
+input {
+  border: 1px solid $dark-gray;
+  padding: 5px;
+  &:focus {
+    outline-color: $green;
+  }
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}

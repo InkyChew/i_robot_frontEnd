@@ -4,25 +4,28 @@
       <div class="d-flex justify-content-between intro">
         <div class="menu">
 
-          <router-link :to="'/'">
+          <router-link :to="'/classroom'">
             <div class="quarter classroom"
               @mouseover="menuItem = 'classroom'"
+              @mouseleave="menuItem = ''"
               >
               <i class="icon icon-bulb"></i>
             </div>
           </router-link>
 
           <div class="d-flex flex-row mt-3">
-            <router-link :to="'/'">
+            <router-link :to="'/news'">
               <div class="quarter news mr-3"
                 @mouseover="menuItem = 'news'"
+                @mouseleave="menuItem = ''"
                 >
                 <i class="icon icon-chat"></i>
               </div>
             </router-link>
-            <router-link :to="'/'">
+            <router-link :to="'/performance'">
               <div class="quarter performance"
                 @mouseover="menuItem = 'performance'"
+                @mouseleave="menuItem = ''"
                 >
                 <div class="circle">
                   <i class="icon icon-chart"></i>
@@ -36,6 +39,7 @@
           <router-link :to="'/auth'">
             <div class="quarter investment"
               @mouseover="menuItem = 'investment'"
+              @mouseleave="menuItem = ''"
               >
               <i class="icon icon-logo-blue"></i>
               <i class="icon icon-invest"></i>
@@ -162,6 +166,13 @@ export default {
     height: 249px;
     top: 0%;
     right: 0%;
+  }
+  // IntroDetail
+  .step {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 </style>

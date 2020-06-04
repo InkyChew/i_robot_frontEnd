@@ -2,6 +2,10 @@ html {
   font-family: 微軟正黑體 !important;
   color: $dark-blue;
 }
+body {
+  padding-bottom: 100px;
+}
+
 .relative {
   position: relative;
 }
@@ -45,6 +49,14 @@ html {
 }
 
 input {
+  border: 1px solid $dark-gray;
+  padding: 5px;
+  &:focus {
+    outline-color: $green;
+  }
+}
+
+textarea {
   border: 1px solid $dark-gray;
   padding: 5px;
   &:focus {

@@ -6,13 +6,19 @@
     </div>
 
     <div class="d-flex justify-content-around m-2">
-      <div class="step1">
+      <div class="step">
         Ⅰ 簡單步驟立即註冊
+        <div class="line-icon mt-2">
+          <i class="icon icon-sm icon-line"></i>
+        </div>
       </div>
-      <div class="step2">Ⅱ 只要有資金就能投資</div>
-      <div class="step3 d-flex flex-column">
-        <div class="mb-1">Ⅲ 獲得能量</div>
-        <i class="icon icon-battery-blue"></i>
+      <div class="step">
+        <div class="mb-2">Ⅱ 只要有資金就能投資</div>
+        <i class="icon icon-sm icon-creditCard"></i>
+      </div>
+      <div class="step">
+        <div class="mb-2">Ⅲ 設置停損點</div>
+        <i class="icon icon-sm icon-stop"></i>
       </div>
     </div>
   </div>
@@ -39,6 +45,11 @@ export default {
   .title {
     font-size: 20px;
     font-weight: bold;
+  }
+  .line-icon {
+    @include size(50px);
+    border-radius: 10px;
+    background-color: $dark-blue;
   }
 }
 </style>

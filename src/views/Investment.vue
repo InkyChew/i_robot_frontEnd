@@ -3,14 +3,18 @@
     <div class="container">
       <div class="row mt-5">
         <div class="col-4">
-          <!-- <div class="selfInfo d-flex flex-column align-items-center"> -->
-            <div class="photoBorder">
-              <img :src="idTokenDecode.picture" class="photo">
+          <div class="selfInfo d-flex justify-content-start">
+            <div class="d-flex flex-column align-items-center">
+              <div class="photoBorder">
+                <img :src="idTokenDecode.picture" class="photo">
+              </div>
+              <div class="username mt-1">{{ idTokenDecode.name }}</div>
+              <div class="mt-2">
+                <div>目前投入總資金: 20,000</div>
+                <div>報酬率: 5%</div>
+              </div>
             </div>
-            <div class="username">{{ idTokenDecode.name }}</div>
-          <!-- </div> -->
-          <div>目前投入總資金: 20,000</div>
-          <div>報酬率: 5%</div>
+          </div>
         </div>
         <div class="col-8">
           <div class="nav-tabs d-flex text-center">

@@ -6,13 +6,17 @@
     </div>
 
     <div class="d-flex justify-content-around m-2">
-      <div class="step1">
-        Ⅰ 能量補給
+      <div class="step">
+        <div class="mb-2">Ⅰ 投資知識專欄</div>
+        <i class="icon icon-sm icon-article"></i>
       </div>
-      <div class="step2">Ⅱ 小測驗</div>
-      <div class="step3 d-flex flex-column">
-        <div class="mb-1">Ⅲ 獲得能量</div>
-        <i class="icon icon-battery-blue"></i>
+      <div class="step">
+        <div class="mb-2">Ⅱ 小測驗</div>
+        <i class="icon icon-sm icon-question"></i>
+      </div>
+      <div class="step">
+        <div class="mb-2">Ⅲ 獲得能量</div>
+        <i class="icon icon-sm icon-battery-blue"></i>
       </div>
     </div>
   </div>

@@ -69,12 +69,15 @@
         </div>
       </div>
     </div>
+
+    <FootNav></FootNav>
   </div>
 </template>
 
 <script>
 import AuthPageLogin from '@/components/AuthPageDetail/AuthPageLogin'
 import AuthPageRegist from '@/components/AuthPageDetail/AuthPageRegist'
+import FootNav from '@/components/FootNav'
 import API from '@/httpService'
 import QS from 'qs'
 
@@ -82,7 +85,8 @@ export default {
   name: 'authPage',
   components: {
     AuthPageLogin,
-    AuthPageRegist
+    AuthPageRegist,
+    FootNav
   },
   data () {
     return {

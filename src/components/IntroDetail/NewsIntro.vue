@@ -6,13 +6,17 @@
     </div>
 
     <div class="d-flex justify-content-around m-2">
-      <div class="step1">
-        Ⅰ 能量補給
+      <div class="step">
+        <div class="mb-1">Ⅰ 國內外財金新聞</div>
+        <i class="icon icon-news"></i>
       </div>
-      <div class="step2">Ⅱ 留言互動</div>
-      <div class="step3 d-flex flex-column">
-        <div class="mb-1 align-items-center">Ⅲ 獲得能量</div>
-        <i class="icon icon-battery-blue"></i>
+      <div class="step">
+        <div class="mb-1">Ⅱ 留言互動</div>
+        <i class="icon icon-chatBoard"></i>
+      </div>
+      <div class="step">
+        <div class="mb-2">Ⅲ 獲得能量</div>
+        <i class="icon icon-sm icon-battery-green"></i>
       </div>
     </div>
   </div>

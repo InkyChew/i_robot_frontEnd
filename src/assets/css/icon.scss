@@ -23,11 +23,23 @@
       background-image: url("~@/assets/images/bulb-blue.svg");
     }
   }
+  &-question {
+    background-image: url("~@/assets/images/question.png");
+  }
+  &-article {
+    background-image: url("~@/assets/images/article.png");
+  }
   &-chat { // 新聞交流平台
     background-image: url("~@/assets/images/Icon material-chat.svg");
     &-green {
       background-image: url("~@/assets/images/chat-green.svg");
     }
+  }
+  &-news {
+    background-image: url("~@/assets/images/news.png");
+  }
+  &-chatBoard {
+    background-image: url("~@/assets/images/chatBoard.png");
   }
   &-chart { // 績效試算
     background-image: url("~@/assets/images/Icon awesome-chart-line.svg");
@@ -38,11 +50,20 @@
       background-image: url("~@/assets/images/chart-line-green.svg");
     }
   }
+  &-sort {
+    background-image: url("~@/assets/images/sort-green.png");
+  }
   &-invest { // 開始投資
     background-image: url("~@/assets/images/Icon awesome-balance-scale.svg");
     &-blue {
       background-image: url("~@/assets/images/balance-blue.svg");
     }
+  }
+  &-creditCard {
+    background-image: url("~@/assets/images/creditCard.png");
+  }
+  &-stop {
+    background-image: url("~@/assets/images/stop.png");
   }
   // 使用者相關
   &-user { //使用者
@@ -53,11 +74,17 @@
     &-yellow {
       background-image: url("~@/assets/images/bell.svg");
     }
+    &-dark-green {
+      background-image: url("~@/assets/images/bell-green.png");
+    }
   }
   &-battery { // 虛擬貨幣
     background-image: url("~@/assets/images/Icon material-battery-charging-full.svg");
     &-blue {
       background-image: url("~@/assets/images/battery.svg");
+    }
+    &-green {
+      background-image: url("~@/assets/images/battery-green.png");
     }
   }
   // Index-IntroDetail
@@ -76,5 +103,18 @@
   }
   &-mail {
     background-image: url("~@/assets/images/mail.png");
+  }
+  // investment
+  &-visa {
+    background-image: url("~@/assets/images/visa.svg");
+  }
+  &-mastercard {
+    background-image: url("~@/assets/images/mastercard.svg");
+  }
+  &-jcb {
+    background-image: url("~@/assets/images/jcb.svg");
+  }
+  &-backThree {
+    background-image: url("~@/assets/images/back-three.svg");
   }
 }

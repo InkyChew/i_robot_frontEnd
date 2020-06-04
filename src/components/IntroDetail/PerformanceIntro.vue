@@ -6,16 +6,17 @@
     </div>
 
     <div class="d-flex justify-content-around m-2">
-      <div class="step1 d-flex flex-column align-items-center">
-        <div class="mb-1">Ⅰ 條件篩選</div>
-        <div>選擇日期、公司、金額</div>
+      <div class="step">
+        <div class="mb-2">Ⅰ 條件篩選</div>
+        <i class="icon icon-sm icon-sort"></i>
       </div>
-      <div class="step2">
-        <div>Ⅱ 觀看績效</div>
+      <div class="step">
+        <div class="mb-2">Ⅱ 觀看績效</div>
+        <i class="icon icon-sm icon-chart-dark-green"></i>
       </div>
-      <div class="step3 d-flex flex-column align-items-center">
-        <div class="mb-1">Ⅲ 模擬即時通知</div>
-        <i class="icon icon-bell-yellow"></i>
+      <div class="step">
+        <div class="mb-2">Ⅲ 模擬即時通知</div>
+        <i class="icon icon-sm icon-bell-dark-green"></i>
       </div>
     </div>
   </div>

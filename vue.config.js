@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/i_robot_frontEnd/",
+  publicPath: "",
   css: {
     loaderOptions: {
       sass: {

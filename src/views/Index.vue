@@ -99,6 +99,7 @@ export default {
       @include size(250px);
       position: relative;
       transition: width .5s, height .5s, box-shadow 1s;
+      cursor: pointer;
       &:hover {
         @include size(255px);
       }
@@ -138,6 +139,7 @@ export default {
           border-radius: 0 0 250px 0;
           background: $green;
           margin: 15px;
+          cursor: pointer;
           .icon-chart {
             left: 30%;
             top: 26%;

@@ -1,17 +1,14 @@
 <template>
-  <div :class="{'close' : close}" class="ansCorrectModal">
+  <div class="ansCorrectModal">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <button type="button" class="close" @click="close = true">
-          <span aria-hidden="true">&times;</span>
-        </button>
         <div class="modal-body text-center">
           <div class="modal-title my-2">恭喜答對</div>
           <i class="icon icon-battery-green"></i>
           <div class="energy">能量 +20</div>
         </div>
         <div class="modal-footer">
-          <div class="btn" @click="close = true">Close</div>
+          <div class="btn" @click="$emit('closeModel', null)">Close</div>
         </div>
       </div>
     </div>
@@ -44,12 +41,10 @@ export default {
   left: 0;
   overflow: hidden;
   outline: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   .modal-title {
     font-size: 20px;
     font-weight: bold;
   }
-}
-.close {
-  display: none;
 }
 </style>

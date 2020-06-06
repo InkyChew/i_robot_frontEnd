@@ -11,10 +11,10 @@
     <div class="btn mt-3" @click="sendAns">送出答案</div>
 
     <template v-if="showModal === 'AnsCorrectModal'">
-      <AnsCorrectModal></AnsCorrectModal>
+      <AnsCorrectModal @closeModel="showModal = $event"></AnsCorrectModal>
     </template>
     <template v-if="showModal === 'AnsWrongModal'">
-      <AnsWrongModal></AnsWrongModal>
+      <AnsWrongModal @closeModel="showModal = $event"></AnsWrongModal>
     </template>
   </div>
 </template>

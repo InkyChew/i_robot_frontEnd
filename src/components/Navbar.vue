@@ -42,10 +42,8 @@ export default {
   background-color: $green;
   box-shadow: 0px -1px 10px grey;
   .logo {
+    cursor: pointer;
     font-weight: bold;
   }
-  // .nav-item {
-  //   // padding: 20px;
-  // }
 }
 </style>

@@ -8,7 +8,9 @@
       :on-cancel="onCancel"
       :is-full-page="fullPage"></loading> -->
 
-    <router-view/>
+    <transition name="pageFade" mode="out-in">
+      <router-view/>
+    </transition>
     <Footer></Footer>
   </div>
 </template>
@@ -39,4 +41,22 @@ export default {
 </script>
 
 <style lang="scss">
+.pageFade {
+  &-enter {
+    transition: all .5s ease-in-out;
+    opacity: 0;
+  }
+  &-enter-to {
+    transition: all .5s ease-in-out;
+    opacity: 1;
+  }
+  &-leave {
+    transition: all .5s ease-in-out;
+    opacity: 1;
+  }
+  &-leave-to {
+    transition: all .5s ease-in-out;
+    opacity: 0;
+  }
+}
 </style>

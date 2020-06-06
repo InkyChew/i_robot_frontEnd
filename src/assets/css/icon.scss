@@ -16,6 +16,9 @@
       background-image: url("~@/assets/images/probot.svg");
     }
   }
+  &-robotError {
+    background-image: url("~@/assets/images/robot-error.png");
+  }
   // main function
   &-bulb { // 投資小學堂
     background-image: url("~@/assets/images/Icon awesome-lightbulb.svg");

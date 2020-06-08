@@ -3,7 +3,8 @@
     <div class="container">
       <div class="d-flex justify-content-between">
         <div class="menu d-flex flex-column">
-          <router-link :to="'/classroom'">投資小學堂</router-link>
+          <!-- <router-link :to="'/classroom'">投資小學堂</router-link> -->
+          <router-link :to="'/classroom'">投資知識小教室</router-link>
           <router-link :to="'/news'">新聞交流平台</router-link>
           <router-link :to="'/performance'">績效試算</router-link>
           <router-link :to="'/investment'">開始投資</router-link>
@@ -16,7 +17,7 @@
         <div class="contact">
           <div>國立雲林科技大學 資訊管理系</div>
           <div>周郁穎 張霽 謝鴻銘 陳詩陽</div>
-          <div>指導教授 - 許中川</div>
+          <!-- <div>指導教授 - 許中川</div> -->
           <div class="d-flex align-items-center">
             <i class="icon icon-mail mr-1"></i>
             FortuneAI@gmail.com

@@ -2,7 +2,8 @@
   <div class="classroomIntro">
     <div class="d-flex justify-content-center align-items-center">
       <i class="icon icon-xs icon-bulb-blue"></i>
-      <div class="title ml-1">投資知識小學堂</div>
+      <!-- <div class="title ml-1">投資知識小學堂</div> -->
+      <div class="title ml-1">投資知識小教室</div>
     </div>
 
     <div class="d-flex justify-content-around m-2">

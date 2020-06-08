@@ -3,7 +3,8 @@
     <div class="container">
       <div class="d-flex align-items-center justify-content-center my-5">
         <i class="icon icon-xs icon-bulb-blue mr-1"></i>
-        <div class="title">投資知識小學堂</div>
+        <!-- <div class="title">投資知識小學堂</div> -->
+        <div class="title">投資知識小教室</div>
       </div>
       <div class="">
         <div class="nav-tabs d-flex text-center">

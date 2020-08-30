@@ -39,6 +39,7 @@
 
 <script>
 import Deposit from '@/components/InvestmentPage/Deposit'
+import API from '@/httpService'
 import QS from 'qs'
 import axios from 'axios'
 import jwtDecode from 'jwt-decode'
@@ -71,10 +72,29 @@ export default {
           this.tokenResult = res.data
           this.idTokenDecode = jwtDecode(res.data.id_token)
         })
+    },
+    async loginWithLine () {
+      const code = this.$route.query.code
+      const data = {
+        code: code
+      }
+      const { postCodeToLine } = API
+      try {
+        const res = await postCodeToLine(data)
+        console.log(res)
+        // if (res.data) {
+        //   console.log(res.data)
+        // }
+      } catch (err) {
+
+      } finally {
+
+      }
     }
   },
   mounted () {
-    this.initLogin()
+    // this.initLogin() // 從資料庫抓取使用者資料
+    this.loginWithLine()
   }
 }
 </script>

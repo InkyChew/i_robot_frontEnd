@@ -1,5 +1,5 @@
 <template>
-  <div class="ansWrongModal">
+  <div class="ansWrongModal modal-open">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <div class="btn" @click="$emit('closeModel', null)">Close</div>
+          <div class="btn" @click="closeModal">Close</div>
         </div>
       </div>
     </div>
@@ -30,31 +30,19 @@ export default {
   name: 'AnsWrongModal',
   data () {
     return {
-      close: false
     }
   },
   methods: {
-  },
-  mounted () {
-    this.close = false
+    closeModal () {
+      this.$modal('AnsWrongModal', false)
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .ansWrongModal {
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  outline: 0;
-  background-color: rgba(0, 0, 0, 0.6);
   .modal-title {
-    font-size: 20px;
-    font-weight: bold;
     color: $blue;
   }
   .correctAns {

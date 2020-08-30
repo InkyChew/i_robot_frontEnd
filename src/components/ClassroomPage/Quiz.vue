@@ -9,38 +9,24 @@
       <div :class="{select : ans === 3}" class="choice" @click="ans = 3">C. $4,919</div>
     </div>
     <div class="btn mt-3" @click="sendAns">送出答案</div>
-
-    <template v-if="showModal === 'AnsCorrectModal'">
-      <AnsCorrectModal @closeModel="showModal = $event"></AnsCorrectModal>
-    </template>
-    <template v-if="showModal === 'AnsWrongModal'">
-      <AnsWrongModal @closeModel="showModal = $event"></AnsWrongModal>
-    </template>
   </div>
 </template>
 
 <script>
-import AnsCorrectModal from '@/components/Modal/AnsCorrectModal'
-import AnsWrongModal from '@/components/Modal/AnsWrongModal'
 
 export default {
   name: 'Quiz',
-  components: {
-    AnsCorrectModal,
-    AnsWrongModal
-  },
   data () {
     return {
-      ans: null,
-      showModal: null
+      ans: null
     }
   },
   methods: {
     sendAns () {
       if (this.ans === 3) {
-        this.showModal = 'AnsCorrectModal'
+        this.$modal('AnsCorrectModal', true)
       } else {
-        this.showModal = 'AnsWrongModal'
+        this.$modal('AnsWrongModal', true)
       }
     }
   }

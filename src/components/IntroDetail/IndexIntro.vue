@@ -18,6 +18,12 @@
         <i class="icon icon-sm icon-book"></i>
       </div>
     </div>
+
+    <div class="d-flex justify-content-center mt-4">
+      <router-link
+        class="btn btn-green title"
+        :to="'/auth'">立即登入</router-link>
+    </div>
   </div>
 </template>
 
@@ -30,7 +36,6 @@ export default {
     }
   },
   methods: {
-
   }
 }
 </script>
@@ -42,6 +47,14 @@ export default {
   .title {
     font-size: 20px;
     font-weight: bold;
+  }
+  .btn {
+    width: 30%;
+    &:hover {
+      transition: transform 0.3s ease-in;
+      transform: scale(1.1);
+      // box-shadow: 10px 3px 10px grey;
+    }
   }
 }
 </style>

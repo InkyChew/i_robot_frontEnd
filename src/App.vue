@@ -7,30 +7,30 @@
       :can-cancel="true"
       :on-cancel="onCancel"
       :is-full-page="fullPage"></loading> -->
+        <!-- alert 系統訊息 -->
+    <AllModals></AllModals>
 
     <transition name="pageFade" mode="out-in">
       <router-view/>
     </transition>
+
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-// import mapGetters from 'vuex'
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
+// import { mapGetters } from 'vuex'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import AllModals from '@/components/Modal/AllModals'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    Footer
+    Footer,
+    AllModals
   },
-  // computed: {
-  //   ...mapGetters({
-  //     isLoading: 'isLoading'
-  //   })
-  // },
   data () {
     return {
     }

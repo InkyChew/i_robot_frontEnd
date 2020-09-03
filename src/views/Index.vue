@@ -50,10 +50,10 @@
 
       <!--功能說明變換-->
       <div class="intro-detail absolute">
-        <template v-if="hasLogin">
+        <!-- <template v-if="hasLogin">
           <WelcomeIntro></WelcomeIntro>
-        </template>
-        <template v-else-if="menuItem === 'classroom'">
+        </template> -->
+        <template v-if="menuItem === 'classroom'">
           <Classroom></Classroom>
         </template>
         <template v-else-if="menuItem === 'news'">
@@ -83,7 +83,7 @@ export default {
   },
   data () {
     return {
-      hasLogin: false,
+      // hasLogin: false,
       menuItem: ''
     }
   },
@@ -91,10 +91,10 @@ export default {
 
   },
   mounted () {
-    const uid = localStorage.getItem('uid')
-    if (uid !== null) {
-      this.hasLogin = true
-    }
+    // const uid = localStorage.getItem('uid')
+    // if (uid !== null) {
+    //   this.hasLogin = true
+    // }
   }
 }
 </script>

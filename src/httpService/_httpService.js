@@ -1,15 +1,15 @@
 import axios from 'axios'
 import { token } from '@/components/AuthPageDetail/LoginPage'
+import store from '../store'
 
-window.addEventListener('storage', function (event) {
-  console.log(event)
+window.addEventListener('storage', function () {
   console.log(token.accessToken)
   token.accessToken = ''
-  window.location.href = '/'
-  alert('logout success')
-  console.log(token.accessToken + 'logged out from storage!')
+  // Vue.prototype.$alertMsg('logout success')
+  store.dispatch('setMsg', 'logout success')
+  store.dispatch('showModal', { name: 'MsgModal', show: true })
+  // console.log(token.accessToken + 'logged out from storage!')
 })
-// window.dispatchEvent(new Event('storage'))
 
 export default function (params) {
   const baseURL = 'http://localhost:8888'

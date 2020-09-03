@@ -11,9 +11,12 @@
     @include size(50px);
   }
   &-logo { // ai機器人
-    background-image: url("~@/assets/images/Icon simple-probot.svg");
+    background-image: url("~@/assets/images/probot-white.svg");
     &-blue {
       background-image: url("~@/assets/images/probot.svg");
+    }
+    &-green {
+      background-image: url("~@/assets/images/probot-green.png");
     }
   }
   &-robotError {

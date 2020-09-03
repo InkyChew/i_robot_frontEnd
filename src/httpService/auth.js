@@ -35,5 +35,13 @@ export default {
       path,
       data
     })
+  },
+  // 取得investment使用者資訊
+  getUserInfo (uid) {
+    const path = `/auth/getUserInfo/${uid}`
+    return httpService({
+      method: 'get',
+      path
+    })
   }
 }

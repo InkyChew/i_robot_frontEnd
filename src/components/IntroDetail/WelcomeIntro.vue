@@ -24,7 +24,7 @@ export default {
   name: 'WelcomeIntro',
   data () {
     return {
-      picture: require('@/assets/images/robot-green.png')
+      userInfo: {}
     }
   },
   methods: {

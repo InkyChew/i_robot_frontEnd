@@ -79,22 +79,22 @@ export default {
     async linkToLine () {
       const { getLineLoginURL } = API
       try {
-        // this.$apiLoading(true)
+        this.$apiLoading(true)
         const res = await getLineLoginURL()
-        if (res.data.status === 200) {
+        if (res.status === 200) {
           const url = res.data.LineloginURL
           window.location.href = url
         }
       } catch (err) {
         this.$err({ err })
       } finally {
-        // this.$apiLoading(false)
+        this.$apiLoading(false)
       }
     },
     validateForm () {
       this.$v.$touch()
       if (this.$v.$anyError) {
-        alert('登入資料有誤，請確認。')
+        this.$alertMsg('登入資料有誤，請確認。')
       } else {
         this.login()
       }
@@ -106,6 +106,7 @@ export default {
           email: this.email,
           password: this.password
         }
+        this.$apiLoading(true)
         const res = await loginAPI(data)
         if (res.data.status === 401) {
           console.log(res.data.description)
@@ -113,12 +114,12 @@ export default {
           token.accessToken = res.data.access_token
           localStorage.setItem('uid', res.data.uid)
           console.log(res.data.description)
-          this.$router.replace('/')
+          this.$router.replace('/investment')
         }
       } catch (err) {
         this.$err({ err })
       } finally {
-        // this.$apiLoading(false)
+        this.$apiLoading(false)
       }
     }
   },

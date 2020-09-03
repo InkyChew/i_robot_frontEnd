@@ -8,29 +8,30 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav d-flex align-items-center ml-auto">
-          <router-link class="nav-item nav-link active" :to="'/'">
-            <i class="icon icon-xs icon-battery-blue mr-3"></i>
-          </router-link>
-          <router-link class="nav-item nav-link active" :to="'/'">
-            <i class="icon icon-xs icon-bell-yellow mr-3"></i>
-          </router-link>
-          <router-link class="nav-item nav-link active" :to="'/'">
-            <i class="icon icon-xs icon-user mr-3"></i>
-          </router-link>
-        </div>
-      </div>
+      <template v-if="getUid !== null">
+        <NavUser></NavUser>
+      </template>
     </div>
   </nav>
 </template>
 
 <script>
+import NavUser from './NavUser'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Navbar',
+  components: {
+    NavUser
+  },
   data () {
     return {
     }
+  },
+  computed: {
+    ...mapGetters({
+      getUid: 'getUid'
+    })
   },
   methods: {
   }

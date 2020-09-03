@@ -9,20 +9,23 @@
 </template>
 
 <script>
-import AlertModal from './AlertModal'
+import ErrModal from './ErrModal'
+import MsgModal from './MsgModal'
 import QuizModals from './QuizModals'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'AllModels',
   components: {
-    AlertModal,
+    ErrModal,
+    MsgModal,
     ...QuizModals
   },
   data () {
     return {
       schema: [
-        { fieldType: 'AlertModal' },
+        { fieldType: 'ErrModal' },
+        { fieldType: 'MsgModal' },
         // register
         { fieldType: 'AnsCorrectModal' },
         { fieldType: 'AnsWrongModal' }

@@ -16,22 +16,15 @@ Vue.prototype.$err = function (param) {
     this.$store.dispatch('setError', errInfo)
 
     if (message !== '') {
-      this.$modal('AlertModal', true)
-      // alert(code + message)
-      // alert({
-      //   msg: message
-      // })
+      this.$modal('ErrModal', true)
     } else {
-      this.$modal('AlertModal', true)
-      // this.$alert({
-      //   msg: '系統錯誤，請稍後再試'
-      // })
+      this.$modal('ErrModal', true)
     }
   } else {
     const errInfo = {
       message: err.message
     }
     this.$store.dispatch('setError', errInfo)
-    this.$modal('AlertModal', true)
+    this.$modal('ErrModal', true)
   }
 }

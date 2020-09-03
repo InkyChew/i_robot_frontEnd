@@ -10,7 +10,8 @@ Vue.prototype.$modal = function (name, show) {
   this.$store.dispatch('showModal', { name, show })
 }
 
-// 顯示 / 關閉 alert modal
-// Vue.prototype.$errMsg = function (err) {
-//   this.$store.dispatch('setError', err)
-// }
+// 設定alertMsg
+Vue.prototype.$alertMsg = function (msg) {
+  this.$store.dispatch('setMsg', msg)
+  this.$modal('MsgModal', true)
+}

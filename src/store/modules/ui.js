@@ -1,6 +1,7 @@
 const types = {
   SHOWMODAL: 'SHOWMODAL',
-  SETERRMSG: 'SETERRMSG'
+  SETERRMSG: 'SETERRMSG',
+  SETMSG: 'SETMSG'
 }
 
 const state = {
@@ -8,12 +9,14 @@ const state = {
   errorInfo: {
     code: null,
     msg: ''
-  }
+  },
+  message: ''
 }
 
 const getters = {
   getModal: state => state.modals,
-  getError: state => state.errorInfo
+  getError: state => state.errorInfo,
+  getMsg: state => state.message
 }
 
 const actions = {
@@ -24,6 +27,9 @@ const actions = {
   setError ({ commit }, err) {
     // this._vm.$log("action: alert modal", alertInfo);
     commit(types.SETERRMSG, err)
+  },
+  setMsg ({ commit }, msg) {
+    commit(types.SETMSG, msg)
   }
 }
 
@@ -51,6 +57,13 @@ const mutations = {
     state.errorInfo = {
       ...err
     }
+  },
+  /**
+   * 設定提示訊息 ex: 登入/出成功，表單錯誤提示訊息
+   * @param {String} msg
+   */
+  [types.SETMSG] (state, msg) {
+    state.message = msg
   }
 }
 

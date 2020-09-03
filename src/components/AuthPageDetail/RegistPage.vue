@@ -101,16 +101,13 @@ export default {
   },
   methods: {
     validateForm () {
-      // var err = null
       if (!this.agree) {
-        // err = new Error('請同意用愛發財聲明。')}
-        // this.$err({ err })
-        alert('請同意用愛發財聲明。')
+        this.$alertMsg('請同意用愛發財聲明')
       } else if (this.$v.$invalid) {
         this.$v.$touch()
-        alert('註冊資料有誤，請確認。')
+        this.$alertMsg('註冊資料有誤，請確認')
       } else if (this.$v.$anyError) {
-        alert('註冊資料有誤，請確認。')
+        this.$alertMsg('註冊資料有誤，請確認')
       } else {
         this.regist()
       }
@@ -123,14 +120,15 @@ export default {
           email: this.email,
           password: this.password
         }
+        this.$apiLoading(true)
         const res = await postNewUser(data)
-        if (res) {
-          console.log(res.data.data.name)
+        if (res.status === 200) {
+          this.$alertMsg(res.data.name + res.data.description)
         }
       } catch (err) {
         this.$err({ err })
       } finally {
-
+        this.$apiLoading(false)
       }
     }
   }

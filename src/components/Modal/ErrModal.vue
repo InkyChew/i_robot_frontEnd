@@ -1,5 +1,5 @@
 <template>
-  <div class="alertModal modal-open">
+  <div class="errModal modal-open">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
@@ -23,7 +23,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'AlertModal',
+  name: 'ErrModal',
   components: {
   },
   data () {
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     closeModel () {
-      this.$modal('AlertModal', false)
+      this.$modal('ErrModal', false)
     }
   }
 }

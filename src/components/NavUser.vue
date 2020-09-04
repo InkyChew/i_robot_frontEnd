@@ -10,10 +10,10 @@
         <router-link class="nav-item nav-link active" :to="'/'">
           <i class="icon icon-xs icon-bell-yellow mr-3"></i>
         </router-link>
-        <router-link
-          class="nav-item nav-link active" :to="'/'"
-          @mouseenter.native="user = true"
-          @mouseleave.native="user = false">
+        <div
+          class="nav-item nav-link active"
+          @mouseenter="user = true"
+          @mouseleave="user = false">
           <i class="icon icon-xs icon-user mr-3"></i>
           <!--user menu-->
           <template v-if="user === true">
@@ -22,7 +22,7 @@
               <li @click="logout">登出</li>
             </ul>
           </template>
-        </router-link>
+        </div>
       </div>
     </div>
 
@@ -46,6 +46,7 @@ export default {
     logout () {
       localStorage.clear()
       this.setUid(null)
+      this.$router.push('/', () => {})
       window.dispatchEvent(new Event('storage'))
     }
   }

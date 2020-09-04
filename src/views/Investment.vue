@@ -51,13 +51,13 @@ export default {
   data () {
     return {
       tab: 'deposit',
-      userInfo: {
-      }
+      userInfo: {}
     }
   },
   methods: {
     ...mapActions({
-      setUid: 'setUid'
+      setUid: 'setUid',
+      setUser: 'setUser'
     }),
     async initLogin () {
       // 從資料庫抓取使用者資料
@@ -74,6 +74,7 @@ export default {
           if (this.userInfo.picture === null) {
             this.userInfo.picture = require('@/assets/images/probot-green.png')
           }
+          this.setUser(this.userInfo)
         }
       } catch (err) {
         this.$err({ err })

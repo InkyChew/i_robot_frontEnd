@@ -36,7 +36,7 @@
         </div>
 
         <div class="d-flex align-items-end">
-          <router-link :to="'/auth'">
+          <div @click="goInvest">
             <div class="quarter investment"
               @mouseover="menuItem = 'investment'"
               @mouseleave="menuItem = ''"
@@ -44,16 +44,16 @@
               <i class="icon icon-logo-blue"></i>
               <i class="icon icon-invest"></i>
             </div>
-          </router-link>
+          </div>
         </div>
       </div>
 
       <!--功能說明變換-->
       <div class="intro-detail absolute">
-        <!-- <template v-if="hasLogin">
+        <template v-if="getUid && menuItem === ''">
           <WelcomeIntro></WelcomeIntro>
-        </template> -->
-        <template v-if="menuItem === 'classroom'">
+        </template>
+        <template v-else-if="menuItem === 'classroom'">
           <Classroom></Classroom>
         </template>
         <template v-else-if="menuItem === 'news'">
@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import IntroDetail from '@/components/IntroDetail/IntroDetail.js'
 
 export default {
@@ -87,14 +88,20 @@ export default {
       menuItem: ''
     }
   },
-  methods: {
-
+  computed: {
+    ...mapGetters({
+      getUid: 'getUid'
+    })
   },
-  mounted () {
-    // const uid = localStorage.getItem('uid')
-    // if (uid !== null) {
-    //   this.hasLogin = true
-    // }
+  methods: {
+    goInvest () { // 投資前，判斷是否登入
+      const uid = localStorage.getItem('uid')
+      if (uid) {
+        this.$router.push('investment')
+      } else {
+        this.$router.push('auth')
+      }
+    }
   }
 }
 </script>

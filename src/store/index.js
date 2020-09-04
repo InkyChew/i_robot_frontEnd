@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import ui from './modules/ui'
+import user from './modules/user'
 
 Vue.use(Vuex)
 
@@ -49,7 +50,8 @@ const rootStore = {
 export default new Vuex.Store({
   ...rootStore,
   modules: {
-    ui
+    ui,
+    user
   },
   strict: false
 })

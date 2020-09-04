@@ -3,7 +3,7 @@ import { token } from '@/components/AuthPageDetail/LoginPage'
 import store from '../store'
 
 window.addEventListener('storage', function () {
-  console.log(token.accessToken)
+  // console.log(token.accessToken)
   token.accessToken = ''
   // Vue.prototype.$alertMsg('logout success')
   store.dispatch('setMsg', 'logout success')

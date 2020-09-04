@@ -55,6 +55,9 @@ export default {
       transform: scale(1.1);
       // box-shadow: 10px 3px 10px grey;
     }
+    &:focus {
+      box-shadow: unset;
+    }
   }
 }
 </style>

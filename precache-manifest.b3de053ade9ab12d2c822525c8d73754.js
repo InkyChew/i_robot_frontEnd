@@ -1,34 +1,42 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b2be47680bd135e82ce",
-    "url": "css/app.0a055ca3.css"
+    "revision": "d1978ae477411153854f",
+    "url": "css/app.7ee40b83.css"
   },
   {
-    "revision": "c0fda5c9353df59c5b8f",
-    "url": "css/auth.e893069d.css"
+    "revision": "77ee0682ca49e1397b62",
+    "url": "css/auth.3325d5b4.css"
   },
   {
-    "revision": "a0ff4151836bb90f7b7f",
-    "url": "css/classroom.2b50e84e.css"
+    "revision": "4c8437267284e39c727a",
+    "url": "css/chunk-vendors.ad4fef4a.css"
   },
   {
-    "revision": "4117bf9ae0895c63e573",
-    "url": "css/index.2150d036.css"
+    "revision": "6f5a9eff181d48e97ce3",
+    "url": "css/classroom.afe0c701.css"
   },
   {
-    "revision": "7878e8b30b71518b5b0b",
-    "url": "css/investment.f2ce68e4.css"
+    "revision": "75ba57709045fb643d11",
+    "url": "css/index.2c5e6a57.css"
   },
   {
-    "revision": "0f6983551f0c21e1cfcd",
+    "revision": "a239f804258b348a1728",
+    "url": "css/investMobile.4008364b.css"
+  },
+  {
+    "revision": "87e83292ed01503a824a",
+    "url": "css/investment.46166497.css"
+  },
+  {
+    "revision": "03970c910448b4542e45",
     "url": "css/news.0dcb5411.css"
   },
   {
-    "revision": "aee8a01a9165c4dee420",
+    "revision": "969b773582bc04e11611",
     "url": "css/newsPage.c8cc6743.css"
   },
   {
-    "revision": "2671c731bb10e5a3ba3f",
+    "revision": "731be22417807e55ce4e",
     "url": "css/performance.7bd80d9c.css"
   },
   {
@@ -58,10 +66,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "04331a00c7b76c91e46093b7ac527260",
     "url": "img/Icon material-chat.04331a00.svg"
-  },
-  {
-    "revision": "27ac96a45da97bcd517037b1a135be37",
-    "url": "img/Icon simple-probot.27ac96a4.svg"
   },
   {
     "revision": "2a9ec68bc2131bde63990f2f7e87b35c",
@@ -124,6 +128,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/news3.c0690ad7.jpg"
   },
   {
+    "revision": "27ac96a45da97bcd517037b1a135be37",
+    "url": "img/probot-white.27ac96a4.svg"
+  },
+  {
     "revision": "01ac00acd7107a40c5fd2b5d4e83aaec",
     "url": "img/probot.01ac00ac.svg"
   },
@@ -140,48 +148,48 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/visa.9eac96ab.svg"
   },
   {
-    "revision": "f049919a0aa1fa181ffe3340351e0f78",
+    "revision": "50ecb9092aee96df6907f30585c516db",
     "url": "index.html"
   },
   {
-    "revision": "8b2be47680bd135e82ce",
-    "url": "js/app.b601f4ce.js"
+    "revision": "d1978ae477411153854f",
+    "url": "js/app.51b846dc.js"
   },
   {
-    "revision": "c0fda5c9353df59c5b8f",
-    "url": "js/auth.b129ae6c.js"
+    "revision": "77ee0682ca49e1397b62",
+    "url": "js/auth.c58ade03.js"
   },
   {
-    "revision": "f0af2afc29fd6b3e9267",
-    "url": "js/auth~investment.d3882e51.js"
+    "revision": "4c8437267284e39c727a",
+    "url": "js/chunk-vendors.19d7a25e.js"
   },
   {
-    "revision": "123e64f85ccde718e616",
-    "url": "js/chunk-vendors.f725b580.js"
+    "revision": "6f5a9eff181d48e97ce3",
+    "url": "js/classroom.144c8849.js"
   },
   {
-    "revision": "a0ff4151836bb90f7b7f",
-    "url": "js/classroom.946e15c7.js"
+    "revision": "75ba57709045fb643d11",
+    "url": "js/index.db6cb6ad.js"
   },
   {
-    "revision": "4117bf9ae0895c63e573",
-    "url": "js/index.60ffa9f8.js"
+    "revision": "a239f804258b348a1728",
+    "url": "js/investMobile.a131a803.js"
   },
   {
-    "revision": "7878e8b30b71518b5b0b",
-    "url": "js/investment.2fa6a9eb.js"
+    "revision": "87e83292ed01503a824a",
+    "url": "js/investment.3ad0caa9.js"
   },
   {
-    "revision": "0f6983551f0c21e1cfcd",
-    "url": "js/news.1d143181.js"
+    "revision": "03970c910448b4542e45",
+    "url": "js/news.344edee7.js"
   },
   {
-    "revision": "aee8a01a9165c4dee420",
-    "url": "js/newsPage.cfa4b53d.js"
+    "revision": "969b773582bc04e11611",
+    "url": "js/newsPage.d1994457.js"
   },
   {
-    "revision": "2671c731bb10e5a3ba3f",
-    "url": "js/performance.1a5e7781.js"
+    "revision": "731be22417807e55ce4e",
+    "url": "js/performance.45e88d4c.js"
   },
   {
     "revision": "f46a4b28fae382ab2b2251b491532b25",

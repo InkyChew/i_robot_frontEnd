@@ -123,7 +123,7 @@ export default {
         this.$apiLoading(true)
         const res = await postNewUser(data)
         if (res.status === 200) {
-          this.$alertMsg(res.data.name + res.data.description)
+          this.$alertMsg(res.data.name + ' ' + res.data.description)
         }
       } catch (err) {
         this.$err({ err })

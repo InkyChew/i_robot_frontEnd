@@ -87,7 +87,7 @@ export default {
       const data = {
         code: code
       }
-      const { postCodeToLine } = API
+      const { postCodeToLine, pushLoginMsg } = API
       try {
         this.$apiLoading(true)
         const res = await postCodeToLine(data)
@@ -97,6 +97,8 @@ export default {
           localStorage.setItem('uid', res.data.uid)
           console.log(token.accessToken)
           this.initLogin()
+          // 推播登入成功訊息至line
+          pushLoginMsg(res.data.uid)
         }
       } catch (err) {
         this.$err({ err })

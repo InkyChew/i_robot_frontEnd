@@ -11,6 +11,7 @@
 <script>
 import ErrModal from './ErrModal'
 import MsgModal from './MsgModal'
+import VerifyModal from './VerifyModal'
 import QuizModals from './QuizModals'
 import { mapGetters } from 'vuex'
 
@@ -19,16 +20,20 @@ export default {
   components: {
     ErrModal,
     MsgModal,
+    VerifyModal,
     ...QuizModals
   },
   data () {
     return {
       schema: [
-        { fieldType: 'ErrModal' },
-        { fieldType: 'MsgModal' },
+        // deposit verify code
+        { fieldType: 'VerifyModal' },
         // register
         { fieldType: 'AnsCorrectModal' },
-        { fieldType: 'AnsWrongModal' }
+        { fieldType: 'AnsWrongModal' },
+        // Err or sysMsg
+        { fieldType: 'ErrModal' },
+        { fieldType: 'MsgModal' }
       ]
     }
   },

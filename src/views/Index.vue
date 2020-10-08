@@ -84,7 +84,6 @@ export default {
   },
   data () {
     return {
-      // hasLogin: false,
       menuItem: ''
     }
   },

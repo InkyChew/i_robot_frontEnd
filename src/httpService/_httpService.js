@@ -12,6 +12,7 @@ window.addEventListener('storage', function () {
 })
 
 export default function (params) {
+  // const baseURL = 'http://192.168.43.19:8888'
   const baseURL = 'http://localhost:8888'
 
   const { method, header, path, data, auth } = params

@@ -9,21 +9,5 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Please clone [i_robot_BackEnd](https://github.com/InkyChew/i_robot_BackEnd)
+to set up the BackEnd, or the website cannot run successfully.

@@ -26,7 +26,7 @@
       <div class="d-flex align-items-center">
         <div class="d-flex flex-column align-items-center">
           <i class="icon icon-sm icon-logo-blue"></i>
-          <div>ID: @582zytns</div>
+          <div>ID: @222xxlda</div>
         </div>
         <img src="@/assets/images/lineBot.png" width="150px">
       </div>

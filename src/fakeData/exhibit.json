@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Inky",
+    "loss": 10,
+    "earn": 20,
+    "rate": 90
+  },
+  {
+    "name": "Roger",
+    "loss": 10,
+    "earn": 20,
+    "rate": 40
+  },
+  {
+    "name": "Yuby",
+    "loss": 10,
+    "earn": 20,
+    "rate": 50
+  },
+  {
+    "name": "Loius",
+    "loss": 10,
+    "earn": 20,
+    "rate": 30
+  },
+  {
+    "name": "Kevin",
+    "loss": 10,
+    "earn": 20,
+    "rate": 70
+  },
+  {
+    "name": "Ray",
+    "loss": 10,
+    "earn": 20,
+    "rate": 80
+  },
+  {
+    "name": "Tonny",
+    "loss": 10,
+    "earn": 20,
+    "rate": 40
+  },
+  {
+    "name": "Judy",
+    "loss": 10,
+    "earn": 20,
+    "rate": 55
+  },
+  {
+    "name": "Jenny",
+    "loss": 10,
+    "earn": 20,
+    "rate": 57
+  },
+  {
+    "name": "Piter",
+    "loss": 10,
+    "earn": 20,
+    "rate": 42
+  },
+  {
+    "name": "Pig",
+    "loss": 10,
+    "earn": 20,
+    "rate": 9
+  },
+  {
+    "name": "Dog",
+    "loss": 10,
+    "earn": 20,
+    "rate": 20
+  },
+  {
+    "name": "Inky",
+    "loss": 10,
+    "earn": 20,
+    "rate": 10
+  },
+  {
+    "name": "Inky",
+    "loss": 10,
+    "earn": 20,
+    "rate": 30
+  },
+  {
+    "name": "Inky",
+    "loss": 10,
+    "earn": 20,
+    "rate": 50
+  }
+]

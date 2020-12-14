@@ -7,11 +7,11 @@
         <canvas id="myChart" ref="myChart" height="100"></canvas>
       </div>
 
-      <div class="d-flex px-3 mt-3">
+      <!-- <div class="d-flex px-3 mt-3">
         <input type="date">
         <div class="mx-2">-</div>
         <input type="date">
-      </div>
+      </div> -->
 
       <div class="info d-flex mt-4">
         <div class="strategy w-100 px-4 py-3">
@@ -44,12 +44,17 @@
           </div>
         </div>
       </div>
+
+      <router-link :to="'/exhibit'" class="btn d-flex justify-content-center mt-2 p-2">
+        Try It
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 import Chart from 'chart.js'
+import data from '@/fakeData'
 
 export default {
   name: 'Performance',
@@ -63,17 +68,18 @@ export default {
       this.chart = new Chart(this.$refs.myChart, {
         type: 'line',
         data: {
-          labels: [new Date(2020, 1), new Date(2020, 2), new Date(2020, 3), new Date(2020, 4)],
+          // labels: [new Date(2020, 1), new Date(2020, 2), new Date(2020, 3), new Date(2020, 4)],
+          labels: data.performance.investDay,
           datasets: [{
-            label: '績效',
-            data: [5, 8, 12, 15],
+            label: '資本總額(萬)',
+            data: data.performance.totalAssets,
             fill: false,
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
+              // 'rgba(255, 99, 132, 1)'
+              // 'rgba(54, 162, 235, 1)'
+              // 'rgba(255, 206, 86, 1)'
+              'rgba(75, 192, 192, 1)'
+              // 'rgba(153, 102, 255, 1)'
             ],
             borderWidth: 1
           }]
@@ -81,10 +87,13 @@ export default {
         options: {
           scales: {
             xAxes: [{
-              type: 'time',
-              time: {
-                unit: 'month'
+              ticks: {
+                display: false // 隱藏y軸
               }
+              // type: 'time',
+              // time: {
+              //   unit: 'year'
+              // }
             }],
             yAxes: [{
               stacked: true
@@ -96,6 +105,7 @@ export default {
   },
   mounted () {
     this.initChart()
+    console.log(data)
   }
 }
 

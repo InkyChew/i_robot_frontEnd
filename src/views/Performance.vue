@@ -13,8 +13,8 @@
         <input type="date">
       </div> -->
 
-      <div class="info d-flex mt-4">
-        <div class="strategy w-100 px-4 py-3">
+      <div class="info d-flex mt-2">
+        <div class="strategy col-5 px-4 py-2">
           <div class="d-flex justify-content-between">
             <div>
               <div>總交易次數</div>
@@ -24,43 +24,56 @@
               <div>總報酬率</div>
               <div>平均報酬率</div>
             </div>
-            <div>
-              <div>5,474</div>
-              <div>4,655</div>
-              <div>819</div>
-              <div>85.04%</div>
-              <div>95.87%</div>
-              <div>50.55%</div>
+            <div :class="{ metric : !stop}">
+              <div>{{ backTestResult.backtest_metric.trade }}次</div>
+              <div>{{ backTestResult.backtest_metric.profit_trade }}次</div>
+              <div>{{ backTestResult.backtest_metric.loss_trade }}次</div>
+              <div>{{ backTestResult.backtest_metric.win_rate }}%</div>
+              <div>{{ backTestResult.backtest_metric.total_profit }}%</div>
+              <div>{{ backTestResult.backtest_metric.avg_profit }}%</div>
             </div>
           </div>
         </div>
-        <div class="notify text-center w-100 px-4 py-3">
-          <div class="title mb-2">
-            LINE Bot 即時通知
-          </div>
-          <div class="message">
-            <div class="msgDate">2019.01.01-2020.01.01</div>
-            您投資 $20,000 的目前報酬率為 782.87%
+        <div class="notify text-center col-7 px-4 py-2">
+          <div id="message" class="message">
+            {{ displayInvestMessage }}
           </div>
         </div>
       </div>
 
-      <router-link :to="'/exhibit'" class="btn d-flex justify-content-center mt-2 p-2">
-        Try It
-      </router-link>
+      <div class="d-flex justify-content-center">
+        <div class="btn btn-green mt-2 mr-2 p-2"
+          @click="startBackTest">
+          Start It
+        </div>
+        <router-link :to="'/exhibit'" class="btn mt-2 p-2">
+          Try It
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Chart from 'chart.js'
-import data from '@/fakeData'
+// import data from '@/fakeData'
+import API from '@/httpService'
 
 export default {
   name: 'Performance',
   data () {
     return {
-      chart: null
+      chart: null,
+      backTestResult: { // 用來儲存讀進來的資料
+        backtest_metric: {},
+        totalAssets: [],
+        investMsgs: []
+      },
+      // 用來儲存顯示的資料
+      displayInvestMessage: '',
+      // js中的全域變數
+      stop: false,
+      index: 0
     }
   },
   methods: {
@@ -68,44 +81,96 @@ export default {
       this.chart = new Chart(this.$refs.myChart, {
         type: 'line',
         data: {
-          // labels: [new Date(2020, 1), new Date(2020, 2), new Date(2020, 3), new Date(2020, 4)],
-          labels: data.performance.investDay,
+          labels: [],
           datasets: [{
-            label: '資本總額(萬)',
-            data: data.performance.totalAssets,
+            label: '資本總額',
+            data: [],
             fill: false,
             borderColor: [
-              // 'rgba(255, 99, 132, 1)'
-              // 'rgba(54, 162, 235, 1)'
-              // 'rgba(255, 206, 86, 1)'
-              'rgba(75, 192, 192, 1)'
-              // 'rgba(153, 102, 255, 1)'
+              'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 7
           }]
         },
         options: {
+          legend: {
+            labels: {
+              fontSize: 20
+            }
+          },
           scales: {
             xAxes: [{
               ticks: {
-                display: false // 隱藏y軸
+                display: false // 隱藏x軸
               }
-              // type: 'time',
-              // time: {
-              //   unit: 'year'
-              // }
             }],
             yAxes: [{
-              stacked: true
+              ticks: {
+                fontSize: 40,
+                callback: function (label, index, labels) {
+                  var n = label
+                  var c = 0
+                  var d = '.'
+                  var t = ','
+                  var s = n < 0 ? '-' : ''
+                  var i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c)))
+                  var j
+                  j = (j = i.length) > 3 ? j % 3 : 0
+
+                  return s + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, '$1' + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '')
+                }
+              }
             }]
           }
         }
       })
+    },
+    addData () {
+      var chartData = this.chart.data
+      var index = this.index
+      if (index <= this.backTestResult.totalAssets.length) {
+        chartData.datasets[0].data.push(this.backTestResult.totalAssets[index])
+        chartData.labels.push(index)
+        this.chart.update()
+        // 同步更新投資訊息在lineBot
+        this.displayInvestMessage += this.backTestResult.investMsgs[index]
+        this.index++
+
+        // scroll to end
+        var message = this.$el.querySelector('#message')
+        message.scrollTop = message.scrollHeight
+      } else {
+        this.stop = true
+      }
+    },
+    startBackTest () {
+      var timer = setInterval(this.addData, 80)
+      if (this.stop) {
+        clearInterval(timer)
+      }
+    },
+    async initBackTestResult () {
+      const { getBackTestResult } = API
+      try {
+        this.$apiLoading(true)
+        const res = await getBackTestResult()
+        if (res.status === 200) {
+          this.backTestResult.backtest_metric = res.data.backtest_metric
+          this.backTestResult.totalAssets = res.data.total_asset
+          this.backTestResult.investMsgs = res.data.line_bot_push_msg
+        }
+        console.log(res)
+      } catch (err) {
+        this.$err({ err })
+      } finally {
+        this.$apiLoading(false)
+      }
     }
   },
   mounted () {
     this.initChart()
-    console.log(data)
+    this.initBackTestResult()
+    // console.log(data)
   }
 }
 
@@ -118,17 +183,24 @@ export default {
     font-weight: bold;
   }
   .info {
+    font-size: 20px;
+    font-weight: bold;
+    height: 220px;
     .strategy {
-      height: 200px;
       background-color: $green;
     }
+    .metric {
+      visibility: hidden;
+    }
     .notify {
-      height: 200px;
       background-color: $dark-green;
       color: $white;
-      .title {
-        font-size: 20px;
-        font-weight: bold;
+      .message {
+        height: 185px;
+        overflow: hidden;
+        overflow-y: auto;
+        white-space:pre-line;
+        text-align: start;
       }
     }
   }

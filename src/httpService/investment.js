@@ -26,5 +26,12 @@ export default {
       path,
       data
     })
+  },
+  getBackTestResult () {
+    const path = '/performance/showInvestInfo'
+    return httpService({
+      method: 'get',
+      path
+    })
   }
 }
